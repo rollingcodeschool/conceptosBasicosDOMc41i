@@ -1,6 +1,9 @@
 let btnVerMas = document.querySelector("#btnVerMas");
+let formulario = document.querySelector("form");
+console.log(formulario)
 //agregar un manejador de eventos
 btnVerMas.addEventListener("click", mostrarOcultarParrafo);
+formulario.addEventListener('submit', trabajoFormulario);
 // funcion con argumentos
 // btnVerMas.addEventListener('click', ()=> mostrarOcultarParrafo(arg1,arg2) );
 
@@ -41,4 +44,16 @@ function mostrarOcultarParrafo() {
     btnVerMas.innerHTML ='Ver mas...';
     btnVerMas.className = 'btn btn-outline-primary'
   }
+}
+
+
+function trabajoFormulario(e){
+    e.preventDefault();
+    console.log(e);
+    console.log('estoy en la funcion del formulario')
+    let input = document.querySelector('input');
+     console.log(input.value);
+     //limpiar el formuario
+    //  formulario.reset();
+    input.value ='';
 }
